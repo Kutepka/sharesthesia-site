@@ -1,0 +1,50 @@
+/* Sharesthesia site: the app's own palette, one narrow column, nothing to operate. */
+:root{
+  --ground:#121211; --raised:#1C1B19; --line:rgba(241,240,235,.10);
+  --ink:#F1F0EB; --second:#C9C7BF; --muted:#A8A69E;
+  --music:#5FC58C; --games:#8189F2; --brand:#E0662A; --straw:#E3D48B;
+  --display:"Archivo",system-ui,sans-serif; --text:"Onest",system-ui,sans-serif;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){
+  :root{ --ground:#F6F5F1; --raised:#FFFFFF; --line:rgba(18,18,17,.10);
+    --ink:#161614; --second:#3E3D39; --muted:#6E6C66; color-scheme:light; }
+}
+*{box-sizing:border-box}
+html{background:var(--ground)}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--text);font-size:17px;line-height:1.55;
+  padding:0 20px 56px}
+main{max-width:640px;margin:0 auto}
+a{color:var(--brand);text-decoration:none;border-bottom:1px solid rgba(224,102,42,.35)}
+a:hover{border-bottom-color:var(--brand)}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:30px;line-height:1.15;margin:8px 0 6px}
+h2{font-size:21px;line-height:1.25;margin:36px 0 10px}
+h3{font-size:17px;line-height:1.3;margin:22px 0 6px;font-family:var(--text);font-weight:600}
+p{margin:0 0 12px}
+ul{margin:0 0 12px;padding-left:22px}
+li{margin:0 0 6px}
+li::marker{color:var(--muted)}
+.top{display:flex;align-items:center;gap:12px;padding:36px 0 22px}
+.top svg{width:30px;height:35px;flex:none}
+.top a{border:0;color:var(--muted);font-size:15px}
+.top a:hover{color:var(--ink)}
+.kick{color:var(--muted);font-size:15px;margin-bottom:28px}
+.card{background:var(--raised);border:1px solid var(--line);border-radius:20px;padding:18px 20px;margin:0 0 14px}
+.card p:last-child,.card ul:last-child{margin-bottom:0}
+.short{border-color:rgba(224,102,42,.35)}
+.short h2{margin-top:0}
+.sub{color:var(--second)}
+.note{color:var(--muted);font-size:15px}
+.pill{display:inline-block;padding:0 8px;border-radius:7px;font-family:var(--display);font-weight:600;font-size:15px;line-height:22px;white-space:nowrap}
+.pill.m{background:rgba(95,197,140,.14);color:var(--music)}
+.pill.g{background:rgba(129,137,242,.16);color:var(--games)}
+.pill.y{background:rgba(227,212,139,.16);color:#B99F2E}
+@media (prefers-color-scheme: dark){ .pill.y{color:var(--straw)} }
+.links{display:grid;gap:10px;margin:22px 0}
+.links a{display:block;background:var(--raised);border:1px solid var(--line);border-radius:16px;padding:14px 16px;color:var(--ink);font-weight:600}
+.links a span{display:block;font-weight:400;color:var(--muted);font-size:15px;margin-top:2px}
+.links a:hover{border-color:rgba(224,102,42,.5)}
+.foot{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:15px;display:flex;flex-wrap:wrap;gap:8px 18px}
+.foot a{color:var(--muted);border:0}
+.foot a:hover{color:var(--ink)}
