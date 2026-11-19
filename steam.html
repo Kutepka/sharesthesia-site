@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<title>Connecting Steam · Sharesthesia</title>
+<link rel="stylesheet" href="style.css">
+<script>
+  // "Sign in through Steam" (SRC-8): Steam sends the browser back here, and
+  // this page only passes Steam's answer on to Sharesthesia's server, with
+  // the address's query untouched. The server checks every field and asks
+  // Steam itself whether it is real; nothing is kept or read here.
+  (function () {
+    var q = window.location.search;
+    if (/^\?state=[0-9a-f]{64}(&|$)/.test(q)) {
+      window.location.replace("https://krpxxgezpjiwlkpinmxi.supabase.co/functions/v1/steam-openid-return" + q);
+    }
+  })();
+</script>
+</head>
+<body>
+<main>
+<h1>Connecting Steam</h1>
+<p class="kick">Taking you back to Sharesthesia. If nothing happens, open the app again: it will say whether Steam is connected.</p>
+</main>
+</body>
+</html>
